@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'; 
+
+import Header from './Header';
+
+// JSX (JavaScript XML): HTML integrado dentro do JavaScript
 
 function App() {
+  let counter = useState(0);
+
+  function increment() {
+    counter += 1;
+
+    console.log(counter);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello OmniStack
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header>Contador: {counter}</Header>
+      <button onClick={increment}>Incrementar</button>
     </div>
   );
 }
